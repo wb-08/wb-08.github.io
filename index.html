@@ -22,11 +22,11 @@
         input {
             width:90%;
             outline:none;
-            margin: 40px 5%;
+            margin: 10px 5%;
             padding: 15px 10px;
             font-size: 14px;
             border: 2px solid silver;
-            border-radius: 50px;
+            border-radius: 5px;
         }
         input:focus {
             border-color: #db5d5d;
@@ -64,6 +64,13 @@
         tg.expand();
 
         add_link.addEventListener("click", () => {
+            let url = document.getElementById("vinted_url").value;
+            if (url.length < 5) {
+                document.getElementById("error").innerText = 'Error!';
+                return ;
+            }
+            data = {url:url}
+            tg.sendData(JSON.stringify(data));
             tg.close();
             });
     </script>
