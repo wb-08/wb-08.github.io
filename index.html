@@ -64,13 +64,6 @@
         tg.expand();
 
         add_link.addEventListener("click", () => {
-            let url = document.getElementById("add_link").value;
-            if (url.length < 5) {
-                document.getElementById("error").innerText = 'Error!';
-                return ;
-            }
-            data = {url:url}
-            tg.sendData(JSON.stringify(data));
             tg.close();
             });
     </script>
