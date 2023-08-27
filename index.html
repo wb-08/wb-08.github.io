@@ -20,7 +20,7 @@
         }
 
         input {
-            width:50%;
+            width:80%;
             margin: 0 auto;
             margin-top: 15px;
             display: block;
@@ -68,6 +68,11 @@
         tg.expand();
 
         add_link.addEventListener("click", () => {
+            let vinted_url = document.getElementById("vinted_url").value;
+            if(vinted_url.length < 5) {
+                document.getElementById("error").innerText = 'Error!';
+                return;
+            }
             tg.close();
             });
     </script>
