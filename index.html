@@ -75,7 +75,7 @@
                 document.getElementById("error").innerText = 'Error!';
                 return;
             }
-            let data = {url:url}
+            let data = {vinted_url:vinted_url}
             tg.sendData(JSON.stringify(data))
             tg.close();
             });
