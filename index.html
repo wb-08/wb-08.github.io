@@ -67,9 +67,10 @@
             let url = document.getElementById("add_link").value;
             if (url.length < 5) {
                 document.getElementById("error").innerText = 'Error!';
-                return
+                return ;
             }
-
+            data = {url:url}
+            tg.sendData(JSON.stringify(data));
             tg.close();
             });
     </script>
