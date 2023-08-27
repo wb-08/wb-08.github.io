@@ -60,6 +60,7 @@
         <input type="text" placeholder="Url" id="vinted_url">
         <input type="text" placeholder="Url Description" id="url_description">
         <button id="add_link">Add new url</button>
+        <div id="error"></div>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -68,6 +69,7 @@
         tg.expand();
 
         add_link.addEventListener("click", () => {
+            document.getElementById("error").innerText = '';
             let vinted_url = document.getElementById("vinted_url").value;
             if(vinted_url.length < 5) {
                 document.getElementById("error").innerText = 'Error!';
