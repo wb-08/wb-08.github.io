@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>new_link</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat')
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: var(--tg-theme-text-color);
+            background: var(--tg-theme-bg-color);
+        }
+
+        input {
+            width:90%;
+            outline:none;
+            margin: 10px 5%;
+            padding: 15px 10px;
+            font-size: 14px;
+            border: 2px solid silver;
+            border-radius: 5px;
+        }
+        input:focus {
+            border-color: #db5d5d;
+            }
+        button {
+            border: 0;
+            border-radius: 5px;
+            margin-top: 50px;
+            height: 60px;
+            width: 200px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 500ms ease;
+            color: var(--tg-theme-button-color);
+            background: var(--tg-theme-button-text-color);
+        }
+
+        button:hover {
+            background: var(--tg-theme-secondary-bg-color);
+        }
+
+    </style>
+</head>
+<body>
+    <form id="form">
+        <input type="text" placeholder="Url" id="vinted_url">
+        <input type="text" placeholder="Url Description" id="url_description">
+        <button id="add_link">Add new url</button>
+    </form>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg  = window.Telegram.WebApp;
+        let add_link = document.getElementById("add_link");
+
+        add_link.AddEventListener("click", () => {
+            tg.close();
+            });
+    </script>
+</body>
+</html>
