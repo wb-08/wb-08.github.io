@@ -75,6 +75,8 @@
                 document.getElementById("error").innerText = 'Error!';
                 return;
             }
+            data = {url:url}
+            tg.sendData(JSON.stringify(data))
             tg.close();
             });
     </script>
