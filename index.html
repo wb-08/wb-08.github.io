@@ -61,6 +61,7 @@
     <script>
         let tg  = window.Telegram.WebApp;
         let add_link = document.getElementById("add_link");
+        tg.expand();
 
         add_link.AddEventListener("click", () => {
             tg.close();
