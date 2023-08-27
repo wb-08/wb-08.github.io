@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>new_link</title>
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat')
+
         * {
             margin: 0;
             padding: 0;
@@ -48,7 +50,6 @@
         }
 
     </style>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
     <form id="form">
@@ -56,12 +57,20 @@
         <input type="text" placeholder="Url Description" id="url_description">
         <button id="add_link">Add new url</button>
     </form>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg  = window.Telegram.WebApp;
         let add_link = document.getElementById("add_link");
         tg.expand();
 
-        add_link.AddEventListener("click", () => {
+        add_link.addEventListener("click", () => {
+            let url = document.getElementById("add_link").value;
+            if (url.length < 5) {
+                document.getElementById("error").innerText = 'Error!';
+                return ;
+            }
+            data = {url:url}
+            tg.sendData(JSON.stringify(data));
             tg.close();
             });
     </script>
