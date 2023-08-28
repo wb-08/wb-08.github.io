@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>new_link</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat')
@@ -45,8 +44,8 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 500ms ease;
-            color: var(--tg-theme-button-color);
-            background: var(--tg-theme-button-text-color);
+            color: white;
+            background: #007782
         }
 
         button:hover {
@@ -57,10 +56,9 @@
 </head>
 <body>
     <form id="form">
-        <input type="text" placeholder="Url" id="vinted_url">
-        <input type="text" placeholder="Url Description" id="url_description">
+        <input type="text" placeholder="Vinted Url" id="Vinted_url" required pattern="https://www.vinted.+" title="The right link format is https://www.vinted...."/>
+        <input type="text" placeholder="Url description e.g white shirt" id="url_description" required>
         <button id="add_link">Add new url</button>
-        <div id="error"></div>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -71,11 +69,9 @@
         add_link.addEventListener("click", () => {
             document.getElementById("error").innerText = '';
             let vinted_url = document.getElementById("vinted_url").value;
-            if(vinted_url.length < 5) {
-                document.getElementById("error").innerText = 'Error!';
-                return;
-            }
-            let data = {vinted_url:vinted_url};
+            let url_description = document.getElementById("url_description").value;
+            let data = {vinted_url:vinted_url,
+                        url_description:url_description};
             tg.sendData(JSON.stringify(data));
             tg.close();
             });
