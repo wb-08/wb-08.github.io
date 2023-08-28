@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>new_link</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat')
@@ -54,9 +53,8 @@
 <body>
     <form id="form">
         <input type="text" placeholder="Vinted Url" id="vinted_url" required pattern="https://www.vinted.+" title="The right link format is https://www.vinted...."/>
-        <input type="text" placeholder="Url description e.g white shirt" id="url_description" required/>
+        <input type="text" placeholder="Url description e.g white shirt" id="url_description" required />
         <button id="add_link">Add new url</button>
-        <div id="error"></div>
     </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -65,7 +63,7 @@
         tg.expand();
 
         add_link.addEventListener("click", () => {
-            document.getElementById("error").innerText = '';
+
             let vinted_url = document.getElementById("vinted_url").value;
             let url_description = document.getElementById("url_description").value;
             let data = {vinted_url:vinted_url,
