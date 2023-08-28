@@ -68,7 +68,7 @@
             let url_description = document.getElementById("url_description").value;
             let data = {vinted_url:vinted_url,
                         url_description:url_description} ;
-
+            tg.sendData(JSON.stringify(data));
             tg.close();
             });
     </script>
